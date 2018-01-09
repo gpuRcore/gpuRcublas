@@ -1,0 +1,21 @@
+Package: gpuRcublas
+Type: Package
+Title: cublas functions for R
+Version: 1.0.0
+Date: 2018-01-05
+Author: Charles Determan Jr.
+Maintainer: Charles Determan Jr. <cdetermanjr@gmail.com>
+Description: The package extends the gpuRcuda package to allow users
+  to leverage cublas functions for GPU computing on NVIDIA devices.
+License: GPL (>= 2)
+Encoding: UTF-8
+Imports: 
+  Rcpp (>= 0.12.14),
+  methods
+LinkingTo: 
+  Rcpp, 
+  gpuRcuda, 
+  thrust
+URL: http://github.com/gpuRcore/gpuRcublas
+BugReports: http://github.com/gpuRcore/gpuRcublas/issues/new
+SystemRequirements: C++11
