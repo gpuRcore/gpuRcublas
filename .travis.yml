@@ -1,14 +1,13 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
-language: R
+language: ruby
 dist: trusty
 sudo: required
 warnings_are_errors: false
-cache: packages
 
 
 before_install:
-  - docker build -t gpuRcore/gpuRcublas .
+  - docker build -t gpurcore/gpurcublas .
 
   
 
