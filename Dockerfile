@@ -29,7 +29,8 @@ RUN git config --global user.email "cdetermanjr@gmail.com"; \
 	
 # setup R configuration and install packages
 RUN echo "r <- getOption('repos'); r['CRAN'] <- 'https://cran.rstudio.com'; options(repos = r);" > ~/.Rprofile
-RUN Rscript -e "install.packages(c('devtools', 'testthat', 'roxygen2', 'Rcpp', 'stringi'))"
+RUN Rscript -e "install.packages(c('devtools', 'testthat', 'roxygen2', 'stringi'))"
+RUN Rscript -e "devtools::install_github('RcppCore/Rcpp')"
 RUN Rscript -e "devtools::install_github('wrathematics/thrust')"
 RUN Rscript -e "devtools::install_github('gpuRcore/gpuRcuda')"
 

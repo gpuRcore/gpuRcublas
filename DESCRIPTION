@@ -10,7 +10,7 @@ Description: The package extends the gpuRcuda package to allow users
 License: GPL (>= 2)
 Encoding: UTF-8
 Imports: 
-  Rcpp (>= 0.12.14),
+  Rcpp (>= 0.12.14.5),
   methods
 LinkingTo: 
   Rcpp, 
