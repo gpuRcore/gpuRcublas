@@ -35,6 +35,7 @@ RUN Rscript -e "devtools::install_github('wrathematics/thrust')"
 RUN Rscript -e "devtools::install_github('gpuRcore/gpuRcuda')"
 
 RUN git clone https://github.com/gpuRcore/gpuRcublas.git
+RUN chmod 777 gpuRcublas/configure
 
 RUN R CMD INSTALL gpuRcublas/
 
