@@ -19,13 +19,13 @@ test_that("cudaMatrix Single Precision Matrix multiplication", {
   
   C <- A %*% B
   
-  fgpuA <- gpuMatrix(A, type="float")
-  fgpuB <- gpuMatrix(B, type="float")
-  fgpuE <- gpuMatrix(E, type = "float")
+  fgpuA <- cudaMatrix(A, type="float")
+  fgpuB <- cudaatrix(B, type="float")
+  fgpuE <- cudaMatrix(E, type = "float")
   
   fgpuC <- fgpuA %*% fgpuB
   
-  expect_is(fgpuC, "fgpuMatrix")
+  expect_is(fgpuC, "fcudaMatrix")
   expect_equal(fgpuC[,], C, tolerance=1e-07, 
                info="float matrix elements not equivalent")  
   expect_error(fgpuA %*% fgpuE,
