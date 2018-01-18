@@ -53,6 +53,9 @@ void cublas_gemm(
   const float* B, int ldb,
   float beta,
   float* C, int ldc) {
+  
+    std::cout << "entered float function" << std::endl;
+  
       cublasSgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, &alpha, A, lda, B, ldb, &beta, C, ldc);
 }
 
@@ -96,6 +99,8 @@ void cublasGemm(SEXP A, SEXP B, SEXP C, std::string type){
   
   int lda=m,ldb=k,ldc=m;
   
+  std::cout << "about to call templated cublas" << std::endl;
+  
   // cublasSgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, alpha, A, lda, B, ldb, beta, C, ldc);
   cublas_gemm(handle, 
        CUBLAS_OP_N,
@@ -119,6 +124,7 @@ void cublasGemm(SEXP A, SEXP B, SEXP C, std::string type){
 void 
 cublasGemm(SEXP A, SEXP B, SEXP C, std::string type, const int type_flag)
 {
+  std::cout << "entered c++" << std::endl;
   switch(type_flag){
   case 6:
       cublasGemm<float>(A, B, C, type);
