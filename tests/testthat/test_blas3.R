@@ -20,7 +20,7 @@ test_that("cudaMatrix Single Precision Matrix multiplication", {
   C <- A %*% B
   
   fgpuA <- cudaMatrix(A, type="float")
-  fgpuB <- cudaatrix(B, type="float")
+  fgpuB <- cudaMatrix(B, type="float")
   fgpuE <- cudaMatrix(E, type = "float")
   
   fgpuC <- fgpuA %*% fgpuB
